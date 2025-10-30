@@ -6,19 +6,19 @@
     <title>CyberTerms</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/Frontend/css/style.css">
     <script src="\Backend\back.js"></script>
 </head>
 <body>
-<section class = "header">
-    <header class="head">
-
+    <header class="header montserrat">
         <div class="logo">
             <img src="./css/pictures/main_logo.svg" alt="CyberField Logo" class="logo-picture">
-            <span class="site-name">CyberField NeT</span>
+        <span class="site-name">CyberField NeT</span>
         </div>
+
+
+        <div class="right-menu">
         <nav class="main-nav">
             <a href="#" class="nav-link active" onclick="showPage('home')">CyberField NeT</a>
             <a href="#" class="nav-link" onclick="showPage('dictionary')">To Dictionary</a>
@@ -26,20 +26,42 @@
         <div class="lang-switch">
             <span>UA/EN</span>
         </div>
+        </div>
     </header>
 
-    <section class = "main-page">
-        <div id="home-section" class="page-section active">
-            <h1>Головна сторінка</h1>
-        </div>
 
-        <div id="dictionary-section" class="page-section">
-            <h1>Контент словника</h1>
-        </div>
+
+<section class="main-page jost">
+
+  <div id="home-section" class="page-section active">
+    <h1 class="main-page-title">Вітаємо в CyberField NeT</h1>
+    <div class="content">
+      <h2>Кібербезпека сьогодні для захисту завтра</h2>
+      <p>CyberField NeT — нова інноваційна компанія, що спеціалізується на комплексних рішеннях у сфері кібербезпеки. Ми пропонуємо послуги від навчальних курсів до консультацій щодо кіберзахисту.</p>
+      <button class="cta-btn">Дізнатись більше</button>
+    </div>
+    <div class="content">
+      <h2 class="section-subtitle">Наша продукція та послуги</h2>
+      <p class="section-text">CyberField NeT пропонує широкий спектр продуктів та послуг для захисту цифрового середовища — від базових курсів до стажування та спеціальних кібер-словників.</p>
+    </div>
+    <div class="content">
+      <h2 class="section-subtitle">Про компанію CyberField NeT</h2>
+      <p class="section-text">Заснована у 2023, це динамічний стартап у сфері кіберосвіти та консалтингу.</p>
+      <h3 class="section-subsubtitle">Команда</h3>
+      <p class="section-text">Наша команда — це вмотивовані спеціалісти та студенти з сучасною експертизою.</p>
+    </div>
+  </div>
+  <section id="dictionary-section" class="page-section ">
+  <p>Контент словника</p>
+  <!-- Словник ... -->
     </section>
+</section>
+
+<footer class="footer montserrat">
+    <p>&copy; 2024 CyberField NeT. All rights reserved.</p>
+</footer>   
 
 </body>
-
 </html>
 
 
