@@ -1,1 +1,103 @@
+/* STYLES */
+montserrat {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+.exo{
+  font-family: 'Exo', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+body {
+  background: linear-gradient(to bottom, #1a1135 0%, #624ab8 55%, #00132c 100%);
+  min-height: 100vh;
+  color: #fff;
+  opacity: 0;
+  animation: fadeIn 1.2s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+
+/* STYLES */
+/* HEADER */
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 30px 10px 10px;  
+  color: #fff;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  font-family: 'Exo', sans-serif;
+}
+.logo {
+  display: flex;
+  align-items: center;
+}
+.logo-picture {
+  height: 100px;
+  width: 140px;
+  margin-right: 10px;
+  display: block; 
+}
+.site-name {
+  font-size: 1.5rem;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+
+.main-nav {
+  display: flex;
+  gap: 35px;
+  padding-left: 0;
+  margin-left: 40rem;
+}
+
+
+.nav-link {
+  color: #fff;
+  font-family: 'Exo', sans-serif;
+  text-decoration: none;
+  font-size: 1.25rem;
+  position: relative;
+  font-weight: 400;
+}
+
+.nav-link.active {
+  opacity: 1;
+  border-bottom: 3px solid #c5003c; 
+}
+
+.lang-switch {
+  color: white; 
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+.page-section {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+  font-family: "Montserrat", sans-serif;
+  align-items: center;
+  padding: 30px;
+}
+
+.page-section.active {
+  display: block;
+  opacity: 1;
+  font-family: "Montserrat", sans-serif;
+  align-items: center;
+  padding: 30px;
+}
+/* HEADER */
+/* MAIN PAGE */
+
 
