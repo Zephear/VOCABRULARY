@@ -1,67 +1,175 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CyberTerms</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/Frontend/css/style.css">
-    <script src="\Backend\back.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CyberTerms</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/Frontend/css/style.css">
+  <script src="\Backend\back.js"></script>
 </head>
+
 <body>
-    <header class="header montserrat">
-        <div class="logo">
-            <img src="./css/pictures/main_logo_color.svg" alt="CyberField Logo" class="logo-picture">
-        <span class="site-name">CyberField NeT</span>
-        </div>
-
-
-        <div class="right-menu">
-        <nav class="main-nav">
-            <a href="#" class="nav-link active" onclick="showPage('home')">CyberField NeT</a>
-            <a href="#" class="nav-link" onclick="showPage('dictionary')">To Dictionary</a>
-        </nav>
-        <div class="lang-switch">
-            <span>UA/EN</span>
-        </div>
-        </div>
-    </header>
-
-
-
-<section class="main-page jost">
-
-  <div id="home-section" class="page-section active">
-    <h1 class="main-page-title">Вітаємо в CyberField NeT</h1>
-    <div class="content">
-      <h2>Кібербезпека сьогодні для захисту завтра</h2>
-      <p>CyberField NeT — нова інноваційна компанія, що спеціалізується на комплексних рішеннях у сфері кібербезпеки. Ми пропонуємо послуги від навчальних курсів до консультацій щодо кіберзахисту.</p>
-      <button class="cta-btn">Дізнатись більше</button>
+  <header class="header montserrat">
+    <div class="logo">
+      <img src="./css/pictures/main_logo_color.svg" alt="CyberField Logo" class="logo-picture">
+      <span class="site-name">CyberField NeT</span>
     </div>
-    <div class="content">
-      <h2 class="section-subtitle">Наша продукція та послуги</h2>
-      <p class="section-text">CyberField NeT пропонує широкий спектр продуктів та послуг для захисту цифрового середовища — від базових курсів до стажування та спеціальних кібер-словників.</p>
-    </div>
-    <div class="content">
-      <h2 class="section-subtitle">Про компанію CyberField NeT</h2>
-      <p class="section-text">Заснована у 2023, це динамічний стартап у сфері кіберосвіти та консалтингу.</p>
-      <h3 class="section-subsubtitle">Команда</h3>
-      <p class="section-text">Наша команда — це вмотивовані спеціалісти та студенти з сучасною експертизою.</p>
-    </div>
-  </div>
-  <section id="dictionary-section" class="page-section ">
-  <p>Контент словника</p>
-  <!-- Словник ... -->
-    </section>
-</section>
 
-<footer class="footer montserrat">
+
+    <div class="right-menu">
+      <nav class="main-nav">
+        <a href="#" class="nav-link active" onclick="showPage('home')">Головна</a>
+        <a href="#" class="nav-link" onclick="showPage('dictionary')">Словник</a>
+      </nav>
+      <div class="lang-switch">
+        <span>UA/EN</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="main-page jost">
+
+    <div id="home-section" class="page-section active">
+      <h1 class="main-page-title">Вітаємо в CyberField NeT</h1>
+      <div class="content">
+        <h2 class="section-subtitle">Кібербезпека сьогодні для захисту завтра</h2>
+        <p class="section-text">CyberField NeT — нова інноваційна компанія, що спеціалізується на комплексних рішеннях у
+          сфері кібербезпеки. Ми пропонуємо послуги від навчальних курсів до консультацій щодо кіберзахисту.</p>
+        <button class="cta-btn">Дізнатись більше</button>
+      </div>
+      <div class="content">
+        <h2 class="section-subtitle">Наша продукція та послуги</h2>
+        <p class="section-text">CyberField NeT пропонує широкий спектр продуктів та послуг для захисту цифрового
+          середовища — від базових курсів до стажування та спеціальних кібер-словників.</p>
+      </div>
+      <div class="content">
+        <h2 class="section-subtitle">Про компанію CyberField NeT</h2>
+        <p class="section-text">Заснована у 2023, це динамічний стартап у сфері кіберосвіти та консалтингу.</p>
+        <h3 class="section-subsubtitle">Команда</h3>
+        <p class="section-text">Наша команда — це вмотивовані спеціалісти та студенти з сучасною експертизою.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="dictionary-section" class="page-section">
+
+    <div class="dictionary-intro-text">
+      <h2 class="main-page-title">Словник кібербезпеки від CyberField NeT!</h2>
+        <p>Тут зібрано найважливіші терміни, які допоможуть краще зрозуміти світ цифрової безпеки.
+        Вивчайте нові поняття, переглядайте визначення, додавайте улюблені терміни до свого списку та розвивайте знання
+        у сфері захисту даних. </p>
+
+        <div class="line_between"></div>
+
+        <div class="alphabet-search">
+          <button class="alpha-btn" data-range="А-Г">А–Г</button>
+          <button class="alpha-btn" data-range="Д-Ж">Д–Ж</button>
+          <button class="alpha-btn" data-range="З-Л">З–Л</button>
+          <button class="alpha-btn" data-range="М-П">М–П</button>
+          <button class="alpha-btn" data-range="Р-Т">Р–Т</button>
+          <button class="alpha-btn" data-range="У-Ш">У–Ш</button>
+          <button class="alpha-btn" data-range="Щ-Я">Щ–Я</button>
+          <button class="alpha-btn" data-range="#">#</button>
+        </div>
+    </div>
+
+    <div class="study-container">
+      <div class = "alphabet">A-Г</div>
+      <div class="terms">
+        <p class = "terms-text"><b>Аналіз впливу на безпеку [Security impact analysis]</b> – це процес, який організація повинна завжди проводити
+          під час аналізу впливу на безпеку, щоб визначити, чи вплинули певні зміни в інформаційних системах на її стан
+          безпеки.</p>
+          <!-- <div class = like-wrap>
+            <div class = "like">
+              <img src="ТУТ БУДЕ ЗБЕРЕЖЕННЯ ТЕРМІНУ" alt="like" class="like-img">
+            </div>
+          </div> -->
+      </div>
+      <div class="terms">
+        <p class = "terms-text"><b>Аналіз загроз [Threat analysis]</b> – це стосується процесу дослідження джерел кіберзагроз та їх оцінки щодо
+          вразливостей інформаційної системи. Метою аналізу є виявлення загроз, які загрожують певній інформаційній
+          системі в конкретному середовищі.</p>
+      </div>
+      <div class="terms">
+        <p class = "terms-text"><b>Анонімний проксі [Anonymizing proxy].</b> Це спосіб приховати вашу активність в Інтернеті та/або зробити її
+          справді важкою для розпізнавання третіми сторонами, які зрештою можуть застосовувати Інтернет-цензуру. Ці
+          проксі-сервери діють як проміжне з'єднання між вашим комп’ютером і Інтернетом. З точки зору сторонньої людини,
+          вони отримують доступ до веб-сайтів і приховують IP-адресу вашого комп’ютера від подальшої ідентифікації.
+          Зазвичай вони використовуються для відновлення доступу до Інтернет-контенту при суворому цензуруванні.</p>
+      </div>
+      <div class="terms">
+        <p class = "terms-text"><b>Антишкідливе програмне забезпечення [Anti-malware].</b>Загальне визначення програмного забезпечення, що
+          запобігає шкідливому програмному забезпеченню (вірусам, шпигунським програмам та іншим загрозам) потрапити
+          всередину системи або завдати їй шкоди. Хоча термін «антивірус» використовується у зв'язку з пластичними
+          антивірусними ними продуктами, засоби захисту від зловмисного програмного забезпечення можуть включати рішення
+          для захисту від шпигунського ПЗ, фішингу та спаму. Останнім часом цей термін поширився для назви
+          спеціалізованого програмного забезпечення, яке бореться зі зловмисним програмним забезпеченням, що викрадає
+          дані, створеним онлайн-злочинцями.</p>
+      </div>
+      <div class="terms">
+        <p class = "terms-text"><b>Антиспам [Anti-spam].</b>Термін «антиспам», або краще сказати, методи боротьби зі спамом – це спеціальні
+          програми, які борються зі спамом, тобто небажаною електронною поштою. Проблему спаму потрібно вирішувати не
+          лише на індивідуальному рівні кожного користувача, але й на рівні системних адміністраторів, які повинні
+          захистити тисячі комп’ютерів від спаму. Спроби спаму стають ще більшою проблемою для всіх, оскільки не один із
+          основних способів досягти найбезпечніших зловмисних програм у дужій природі та додаткових загроз фішингу.</p>
+      </div>
+      <div class="next-wrap">
+        <button class="next">Наступна сторінка</button>
+      </div>
+      <!-- <div class="terms">
+        <p class = "terms-text"><b>Антиспуфінг [Anti-spoofing].</b> Щоб зупинити атаки DDoS (розподілена відмова в обслуговуванні), які вражають так
+          багато веб-сайтів, використовуються методи боротьби зі спуфінгом. Для здійснення таких атак часто
+          використовують підроблені або фальшиві IP-адреси, які дозволяють надсилати від великих кількостей запитів.
+          Коли сервер веб-сайту намагається фільтрувати ці запити й запобігати атакам через спуфінг, він відстежує
+          джерела, яких найчастіше очікували доступу до сервера, які надіслали запити. У цьому випадку доступним
+          рішенням є використання програмного забезпечення, яке може виявити ці фальшиві IP-адреси та відмовити у
+          з’єднанні.</p>
+      </div>
+      <div class="terms">
+        <p class = "terms-text"><b>Антишпигунське програмне забезпечення [Anti-spyware software].</b>Технологія захисту від шпигунського
+          програмного забезпечення використовується для виявлення та блокування спроб шпигунського програмного
+          забезпечення. Шпигунське програмне забезпечення – це тип програмного забезпечення, яке дозволяє рекламодавцям
+          або онлайн-зловмисникам виявляти особисті дані з комп’ютера без дозволу користувача. Шпигунське програмне
+          забезпечення може заразити ваш комп’ютер, якщо ви відвідуєте певні веб-сайти або натискаєте спливаючі
+          повідомлення, що пропонують завантажити додаток або програму. Якщо таке програмне забезпечення потрапляє на
+          ваш комп’ютер, воно спробує відстежити ваші активності в Інтернеті та навіть може встановити додаткові
+          програми без вашого згоди, що, зрештою, впливає на загальну стабільність.</p>
+      </div>
+      <div class="terms">
+        <p class = "terms-text"><b>Антивірусне програмне забезпечення [Antivirus software].</b> Антивірусне програмне забезпечення, яке іноді
+          називають програмою захисту від зловмисного програмного забезпечення, з’явилося кілька років тому для захисту
+          комп’ютерів від вірусів та інших загроз, які виникали на початковій стадії використання ПК. У наш час
+          антивірусні програми захищають користувачів від більш складних онлайн-загроз, таких як програми-вимагачі,
+          руткіти, трояни, шпигунське програмне забезпечення і багато інших. Не менш важлива назва «антивірус»
+          збереглася за цими програмами і повністю виправдана, оскільки антивірусні програми дійсно захищають комп’ютери
+          від великої кількості загроз.</p>
+      </div>
+      <div class="terms">
+        <p class = "terms-text"><b>Атака (онлайн) [Attack (online)].</b> Онлайн-атаки бувають різних типів і націлені як на звичайних людей, так і
+          на великі корпорації. Зазвичай вони намагаються використати програмні або апаратні вразливості, щоб проникнути
+          в комп’ютери, сервери чи мобільні пристрої та зібрати або знищити важливу інформацію. Однією з наймасовіших
+          онлайн-атак була зосереджена в 2014 році на компанію Sony Pictures, але з тих пір багато інших потрапили в
+          новини.</p>
+      </div>
+      <div class="terms">
+        <p class = "terms-text"><b>Атака грубою силою [Brute force attack].</b> Атака грубою силою – це техніка, яку використовують хакери, під час
+          якої тестується велика кількість ключових слів або комбінацій паролів, щоб отримати доступ до сайту чи мережі.
+          Це одна з основних причин, чому користувачі повинні встановлювати надійні паролі.</p>
+      </div>
+    </div> -->
+  </section>
+
+
+  <footer class="footer montserrat">
     <p>&copy; 2024 CyberField NeT. All rights reserved.</p>
-</footer>   
+  </footer>
 
 </body>
+
 </html>
-
-
