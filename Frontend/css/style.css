@@ -79,6 +79,69 @@ body {
   border-radius: 5px;
 }
 
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 12px 4vw 8px 3vw;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  
+  .logo {
+    gap: 8px;
+  }
+  
+  .logo-picture {
+    height: 60px;
+    width: 120px;
+  }
+  
+  .site-name {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+  }
+  
+  .right-menu {
+    width: 100%;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 10px 10px;
+  }
+  
+  .main-nav {
+  margin-left: 0;
+  margin-right: 13rem;
+  justify-content: center;
+  gap: 2rem;
+  flex: 1;
+  display: flex; 
+}
+
+  .nav-link {
+    font-size: 0.95rem;
+    padding-bottom: 3px;
+  }
+  
+   .lang-switch {
+    position: absolute;
+    top:29px;
+    right: 3vw;
+    margin-right: 1rem;
+    font-size: 0.9rem;
+    padding: 4px 10px;
+    border: 1.2px solid #fff2;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.2s, color 0.2s, border-color 0.2s;
+    
+  }
+  .adapt {
+    order: -1;
+    width: 100%;
+   
+  }
+}
+
+
 /* MAIN PAGE */
 .main-page-title {
   font-size: 3.3rem;
@@ -94,7 +157,7 @@ body {
  display: none; 
  flex-direction: column;
  align-items: center;
- justify-content: flex-start; /* зверху */
+ justify-content: flex-start; 
  min-height: calc(100vh - 150px);
  padding: 52px 5vw; 
  gap: 2.5rem;
@@ -246,33 +309,137 @@ body {
   letter-spacing: 1.3px;
 }
 
-
-
-.next-wrap {
+.buttons-container {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 60px;
   width: 100%;
+  gap: 8rem;
 }
 
-.next {
-  margin-top: 18px;
+.previous, .next {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.15rem;
   padding: 10px 35px;
   background: linear-gradient(90deg, #ff4577, #aa35ff 80%);
   color: #fff;
   border: none;
+  margin: 40px 40px;
   border-radius: 15px;
   font-weight: 600;
   box-shadow: 0 3px 15px #b73eca63;
   transition: background 0.2s, transform 0.18s;
   cursor: pointer;
+  margin-top: 18px; 
 }
-
 .next:hover {
   background: linear-gradient(90deg, #fff080, #ff4577 70%);
   color: #291951;
   transform: scale(1.03);
+
+}
+.previous:hover {
+  background: linear-gradient(90deg, #fff080, #ff4577 70%);
+  color: #291951;
+  transform: scale(1.03);
+  
+}
+/* Dictionary adaptation */
+@media screen and (max-width: 1280px) {
+  .dictionary-intro-text {
+    font-size: 17px;
+    padding: 0 8px;
+    margin-bottom: 15px;
+  }
+  .line_between {
+    margin: 1.5rem 0;
+  }
+  .alphabet-search {
+    flex-wrap: wrap;
+    gap: 7px;
+    justify-content: center;
+    font-size: 1rem;
+  }
+  .study-container{
+    max-width: 1000px;
+    padding-left:15px;
+    padding-right: 27px;
+  }
+  .terms {
+    padding: 12px 6px;
+    max-width: 99vw;
+    margin-bottom: 1.4rem;
+    border-radius: 14px;
+  }
+  .alphabet {
+    font-size: 25px;
+    margin-bottom: 10px;
+    margin-left: 3px;
+  }
+  .terms-text {
+    font-size: 15px;
+    padding-right: 0;
+    padding-left: 10px;
+  }
+  .alpha-btn {
+    padding: 3px 7px;
+    font-size: 0.7rem;
+    border-radius: 24px;
+  }
+}
+@media screen and (max-width: 853px) {
+  .dictionary-intro-text {
+    font-size: 17px;
+    padding: 0 8px;
+    margin-bottom: 15px;
+  }
+  .line_between {
+    margin: 1.5rem 0;
+  }
+  .alphabet-search {
+    flex-wrap: wrap;
+    gap: 7px;
+    justify-content: center;
+    font-size: 1rem;
+  }
+  .study-container{
+    max-width: 600px;
+    padding-left:10px;
+    padding-right: 22px;
+  }
+  .terms {
+    padding: 12px 6px;
+    max-width: 99vw;
+    margin-bottom: 1.4rem;
+    border-radius: 14px;
+  }
+  .alphabet {
+    font-size: 25px;
+    margin-bottom: 10px;
+    margin-left: 3px;
+  }
+  .terms-text {
+    font-size: 15px;
+    padding-right: 0;
+    padding-left: 10px;
+  }
+    .buttons-container {
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .previous,
+  .next {
+    font-size: 1rem;
+    padding: 10px 28px;
+  }
+
+  .alpha-btn {
+    padding: 3px 7px;
+    font-size: 0.8rem;
+    border-radius: 24px;
+  }
 }
 /* CTA BUTTON */
 .cta-btn {
