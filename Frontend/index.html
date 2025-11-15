@@ -171,9 +171,29 @@
 
 
   <footer class="footer montserrat">
-    <p>&copy; 2024 CyberField NeT. All rights reserved.</p>
+    <p>&copy; 2025 CyberField NeT. All rights reserved.</p>
   </footer>
 
 </body>
+
+<script>
+async function loadTerms() {
+  const response = await fetch('http://127.0.0.1:3001/api/terms');
+  const terms = await response.json();
+
+  const container = document.querySelector('.study-container');
+  container.innerHTML = ""; // очищаємо
+
+  terms.forEach(term => {
+    const item = document.createElement('div');
+    item.className = 'terms';
+    item.innerHTML = `<p class="terms-text"><b>${term.NameUA} [${term.NameEN}]</b> – ${term.DescriptionUA || ''}</p>`;
+    container.appendChild(item);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', loadTerms);
+</script>
+
 
 </html>
