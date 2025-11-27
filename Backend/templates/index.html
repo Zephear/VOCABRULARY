@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CyberTerms</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+  <script src="{{url_for('static', filename='back.js')}}"></script>
+</head>
+
+<body>
+  <header class="header montserrat">
+    <div class="logo">
+      <img src="{{url_for('static', filename='css/pictures/main_logo_color.svg')}}" alt="CyberField Logo" class="logo-picture">
+      <span class="site-name">CyberField NeT</span>
+    </div>
+
+
+    <div class="right-menu">
+      <nav class="main-nav">
+        <a href="#" class="nav-link active" onclick="showPage('home')">Головна</a>
+        <a href="#" class="nav-link" onclick="showPage('dictionary')">Словник</a>
+        <a href="#" class="nav-link" onclick="showPage('saved-terms')">Збережене</a>
+      </nav>
+      <div class = "adapt">
+        <div class="lang-switch">
+        <span>UA/EN</span>
+      </div>
+      </div>
+      
+    </div>
+  </header>
+
+  <section class="main-page jost">
+
+    <div id="home-section" class="page-section active">
+      <h1 class="main-page-title">Вітаємо в CyberField NeT</h1>
+      <div class="content">
+        <h2 class="section-subtitle">Кібербезпека сьогодні для захисту завтра</h2>
+        <p class="section-text">CyberField NeT — нова інноваційна компанія, що спеціалізується на комплексних рішеннях у
+          сфері кібербезпеки. Ми пропонуємо послуги від навчальних курсів до консультацій щодо кіберзахисту.</p>
+        <button class="cta-btn">Дізнатись більше</button>
+      </div>
+      <div class="content">
+        <h2 class="section-subtitle">Наша продукція та послуги</h2>
+        <p class="section-text">CyberField NeT пропонує широкий спектр продуктів та послуг для захисту цифрового
+          середовища — від базових курсів до стажування та спеціальних кібер-словників.</p>
+      </div>
+      <div class="content">
+        <h2 class="section-subtitle">Про компанію CyberField NeT</h2>
+        <p class="section-text">Заснована у 2023, це динамічний стартап у сфері кіберосвіти та консалтингу.</p>
+        <h3 class="section-subsubtitle">Команда</h3>
+        <p class="section-text">Наша команда — це вмотивовані спеціалісти та студенти з сучасною експертизою.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="dictionary-section" class="page-section">
+
+    <div class="dictionary-intro-text">
+      <h2 class="main-page-title">Словник кібербезпеки від CyberField NeT!</h2>
+        <p>Тут зібрано найважливіші терміни, які допоможуть краще зрозуміти світ цифрової безпеки.
+        Вивчайте нові поняття, переглядайте визначення, додавайте улюблені терміни до свого списку та розвивайте знання
+        у сфері захисту даних. </p>
+
+        <div class="line_between"></div>
+
+        <div class="alphabet-search">
+          <button class="alpha-btn" data-range="А-Г">А–Г</button>
+          <button class="alpha-btn" data-range="Д-Ж">Д–Ж</button>
+          <button class="alpha-btn" data-range="З-Л">З–Л</button>
+          <button class="alpha-btn" data-range="М-П">М–П</button>
+          <button class="alpha-btn" data-range="Р-Т">Р–Т</button>
+          <button class="alpha-btn" data-range="У-Ш">У–Ш</button>
+          <button class="alpha-btn" data-range="Щ-Я">Щ–Я</button>
+        </div>
+    </div>
+
+  <div class="study-container">
+    <div id="terms-list-container">
+    </div>
+    <div class="buttons-container">
+      <button class="previous">Назад</button>
+      <button class="next">Далі</button>
+    </div>
+  </div>
+  </section>
+
+  <section id="saved-terms-section" class="page-section saved-terms">
+    <div>
+      <h2 class="main-page-title">Тут ви можете переглядати збережені терміни</h2>
+      <div class="line_between"></div>
+      <div class="alphabet-search">
+          <button class="alpha-btn" data-range="А-Г">А–Г</button>
+          <button class="alpha-btn" data-range="Д-Ж">Д–Ж</button>
+          <button class="alpha-btn" data-range="З-Л">З–Л</button>
+          <button class="alpha-btn" data-range="М-П">М–П</button>
+          <button class="alpha-btn" data-range="Р-Т">Р–Т</button>
+          <button class="alpha-btn" data-range="У-Ш">У–Ш</button>
+          <button class="alpha-btn" data-range="Щ-Я">Щ–Я</button>
+        </div>
+
+    <div class="study-container" id="saved-container">
+      <div class = "terms">
+      </div>
+      <div class="buttons-container">
+        <button class="previous">Назад</button>
+        <button class="next">Далі</button>
+      </div>
+    </div>
+    </div>
+    
+
+  </section>
+
+
+  <footer class="footer montserrat">
+    <p>&copy; 2025 CyberField NeT. All rights reserved.</p>
+  </footer>
+
+</body>
+
+
+
+
+</html>
