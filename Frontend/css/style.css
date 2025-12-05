@@ -121,24 +121,6 @@ body {
     padding-bottom: 3px;
   }
   
-   .lang-switch {
-    position: absolute;
-    top:29px;
-    right: 3vw;
-    margin-right: 1rem;
-    font-size: 0.9rem;
-    padding: 4px 10px;
-    border: 1.2px solid #fff2;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: 0.2s, color 0.2s, border-color 0.2s;
-    
-  }
-  .adapt {
-    order: -1;
-    width: 100%;
-   
-  }
 }
 
 
@@ -190,19 +172,7 @@ body {
   border: 1.5px solid #ff4577cc;
 }
 
-.section-subtitle {
-  color: white;
-  margin-bottom: 13px;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1.3px;
-}
-.section-subsubtitle {
-  color: #ab98ff;
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 6px;
-}
+
 
 .section-text {
   color: #ebdefb;
@@ -446,23 +416,29 @@ body {
 
 /* CTA BUTTON */
 .cta-btn {
-  margin-top: 18px;
   font-family: inherit;
   font-size: 1.22rem;
   padding: 10px 35px;
   background: linear-gradient(90deg, #ff4577, #aa35ff 80%);
   color: #fff;
+  text-decoration: none;
   border: none;
   border-radius: 14px;
   font-weight: 700;
   box-shadow: 0 3px 15px #b73eca63;
   transition: background 0.2s, transform 0.18s;
   cursor: pointer;
+  margin-top: 20px; /* Додайте цей рядок */
+  display: inline-block;
 }
 .cta-btn:hover {
   background: linear-gradient(90deg, #fff080, #ff4577 70%);
   color: #291951;
   transform: scale(1.03);
+}
+.wrap{
+  text-align: center;
+  margin-top: 60px;
 }
 
 /* Адаптивність */
@@ -476,7 +452,7 @@ body {
 .footer {
   width: 100%;
   padding: 22px 0;
-  background: linear-gradient(90deg, #1a1135 0%, #624ab8 80%, #00132c 100%);
+  background: rgba(16, 9, 40, 0.97);
   color: #e3defa;
   text-align: center;
   font-size: 1.13rem;
@@ -494,9 +470,127 @@ body {
 }
 
 
-@media (max-width: 650px) {
-  .footer {
-    font-size: 0.97rem;
-    padding: 14px 0;
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.social-links {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 25px;
+  padding-top: 10px;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 33%;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  transform: translateY(-3px);
+}
+
+.social-links a.facebook {
+  background: rgba(24, 119, 242, 0.2);
+  color: #1877f2;
+}
+
+.social-links a.facebook:hover {
+  background: #1877f2;
+  color: #fff;
+}
+
+.social-links a.instagram {
+  background: rgba(225, 48, 108, 0.2);
+  color: #e1306c;
+}
+
+.social-links a.instagram:hover {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  color: #fff;
+}
+
+.social-links a.linkedin {
+  background: rgba(0, 119, 181, 0.2);
+  color: #0077b5;
+}
+
+.social-links a.linkedin:hover {
+  background: #0077b5;
+  color: #fff;
+}
+
+.social-links a.telegram {
+  background: rgba(0, 136, 204, 0.2);
+  color: #0088cc;
+}
+
+.social-links a.telegram:hover {
+  background: #0088cc;
+  color: #fff;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.footer-links a {
+  color: #7c8aff;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  padding-top: 20px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+.line-between {
+    height: 0.1rem;
+    background: linear-gradient(90deg, #fff080, #ff4577 70%);
+    margin-bottom: 30px;
+}
+/* Адаптивність для мобільних */
+@media (max-width: 480px) {
+  .social-links {
+    gap: 15px;
+  }
+
+  .social-links a {
+    width: 40px;
+    height: 40px;
+  }
+
+  .social-links svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 10px;
   }
 }

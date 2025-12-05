@@ -1,24 +1,27 @@
-function showPage(page) {
-  document.querySelectorAll('.page-section').forEach(section => {
-    section.classList.remove('active');
-  });
-  document.getElementById(page + '-section').classList.add('active');
-  document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
-  if (page === 'home') {
-    document.querySelector('.nav-link:nth-child(1)').classList.add('active');
-  } else if (page === 'dictionary') {
-    document.querySelector('.nav-link:nth-child(2)').classList.add('active');
-  }
-  else if (page === 'saved-terms') {
-    document.querySelector('.nav-link:nth-child(3)').classList.add('active');
-  }
-}
-
-// Пагінація та переключання термінів
 let allTerms = [];
 let filteredTerms = [];
 let currentPage = 0;
 const TERMS_PER_PAGE = 10;
+
+function showPage(page) {
+  document.querySelectorAll(".page-section").forEach((section) => {
+    section.classList.remove("active");
+  });
+  const targetSection = document.getElementById(page + "-section");
+  if (targetSection) targetSection.classList.add("active");
+
+  document
+    .querySelectorAll(".nav-link")
+    .forEach((link) => link.classList.remove("active"));
+
+  if (page === "home") {
+    const link = document.querySelector(".nav-link:nth-child(1)");
+    if (link) link.classList.add("active");
+  } else if (page === "dictionary") {
+    const link = document.querySelector(".nav-link:nth-child(2)");
+    if (link) link.classList.add("active");
+  }
+}
 
 function getLetterRange(range) {
   const ranges = {
@@ -34,7 +37,13 @@ function getLetterRange(range) {
   return ranges[range] || [];
 }
 
-// Функція для фільтрації термінів за літерою
+function updateAlphabetTitle(range) {
+  const alphabetDiv = document.querySelector(".alphabet");
+  if (alphabetDiv) {
+    alphabetDiv.textContent = range;
+  }
+}
+
 function filterTermsByLetter(range) {
   const letters = getLetterRange(range);
 
@@ -48,46 +57,71 @@ function filterTermsByLetter(range) {
   }
 
   currentPage = 0;
-  displayTerms();
   updateAlphabetTitle(range);
+  displayTerms(true);
 }
 
-// Оновлення заголовка алфавіту
-function updateAlphabetTitle(range) {
-  const alphabetDiv = document.querySelector(".alphabet");
-  if (alphabetDiv) {
-    alphabetDiv.textContent = range;
+function displayTerms(shouldScrollToTop = false) {
+  const container = document.querySelector(".study-container");
+  const buttonsContainer = container.querySelector(".buttons-container");
+
+  container.style.minHeight = `${container.offsetHeight}px`;
+  const termsElements = container.querySelectorAll(".terms");
+
+  termsElements.forEach((el) => {
+    el.style.opacity = "0";
+    el.style.transform = "translateY(-10px)";
+  });
+
+  setTimeout(() => {
+    termsElements.forEach((el) => el.remove());
+
+    const startIndex = currentPage * TERMS_PER_PAGE;
+    const endIndex = Math.min(
+      startIndex + TERMS_PER_PAGE,
+      filteredTerms.length
+    );
+    const termsToShow = filteredTerms.slice(startIndex, endIndex);
+
+    termsToShow.forEach((term, index) => {
+      const item = document.createElement("div");
+      item.className = "terms";
+      item.style.opacity = "0";
+      item.style.transform = "translateY(15px)";
+      item.style.transition = "opacity 0.4s ease, transform 0.4s ease";
+
+      item.innerHTML = `<p class="terms-text"><b>${term.NameUA} [${
+        term.NameEN
+      }]</b> – ${term.DescriptionUA || ""}</p>`;
+      container.insertBefore(item, buttonsContainer);
+
+      setTimeout(() => {
+        item.style.opacity = "1";
+        item.style.transform = "translateY(0)";
+      }, 50 * index);
+    });
+
+    updateButtons();
+    updatePageInfo();
+
+    setTimeout(() => {
+      container.style.minHeight = "0";
+    }, 500);
+
+    if (shouldScrollToTop) {
+      smartScrollToTop();
+    }
+  }, 300);
+}
+
+function smartScrollToTop() {
+  const container = document.querySelector(".study-container");
+  const rect = container.getBoundingClientRect();
+  if (rect.top < 0) {
+    container.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 }
 
-// Відображення термінів поточної сторінки
-function displayTerms() {
-  const container = document.querySelector(".study-container");
-  const alphabetDiv = container.querySelector(".alphabet");
-  const buttonsContainer = container.querySelector(".buttons-container");
-
-  const termsElements = container.querySelectorAll(".terms");
-  termsElements.forEach((el) => el.remove());
-
-  const startIndex = currentPage * TERMS_PER_PAGE;
-  const endIndex = Math.min(startIndex + TERMS_PER_PAGE, filteredTerms.length);
-  const termsToShow = filteredTerms.slice(startIndex, endIndex);
-
-  // Додаємо терміни між алфавітом і кнопками
-  termsToShow.forEach((term) => {
-    const item = document.createElement("div");
-    item.className = "terms";
-    item.innerHTML = `<p class="terms-text"><b>${term.NameUA} [${
-      term.NameEN
-    }]</b> – ${term.DescriptionUA || ""}</p>`;
-    container.insertBefore(item, buttonsContainer);
-  });
-
-  updateButtons();
-  updatePageInfo();
-}
-
-// Оновлення стану кнопок
 function updateButtons() {
   const prevBtn = document.querySelector(".previous");
   const nextBtn = document.querySelector(".next");
@@ -95,77 +129,75 @@ function updateButtons() {
   prevBtn.disabled = currentPage === 0;
   nextBtn.disabled = (currentPage + 1) * TERMS_PER_PAGE >= filteredTerms.length;
 
-  // Додаємо стилі для неактивних кнопок
   prevBtn.style.opacity = prevBtn.disabled ? "0.5" : "1";
   prevBtn.style.cursor = prevBtn.disabled ? "not-allowed" : "pointer";
   nextBtn.style.opacity = nextBtn.disabled ? "0.5" : "1";
   nextBtn.style.cursor = nextBtn.disabled ? "not-allowed" : "pointer";
 }
 
-// Додавання інформації про сторінки
 function updatePageInfo() {
   let pageInfo = document.querySelector(".page-info");
   if (!pageInfo) {
     pageInfo = document.createElement("div");
     pageInfo.className = "page-info";
     pageInfo.style.textAlign = "center";
-    pageInfo.style.margin = "15px 0";
-    pageInfo.style.color = "#666";
+    pageInfo.style.fontSize = "23px";
+    pageInfo.style.marginTop = "30px";
+    pageInfo.style.marginBottom = "30px";
+    pageInfo.style.color = "#ebdefb";
     const buttonsContainer = document.querySelector(".buttons-container");
     buttonsContainer.parentNode.insertBefore(pageInfo, buttonsContainer);
   }
 
   const totalPages = Math.ceil(filteredTerms.length / TERMS_PER_PAGE);
-  pageInfo.textContent = `Сторінка ${
-    currentPage + 1
-  } з ${totalPages} | Термінів: ${filteredTerms.length}`;
+  const current = filteredTerms.length > 0 ? currentPage + 1 : 0;
+
+  pageInfo.textContent = `Сторінка ${current} з ${
+    totalPages || 1
+  } | Всього термінів: ${filteredTerms.length}`;
 }
 
-// Завантаження термінів з сервера
 async function loadTerms() {
   try {
     const response = await fetch("http://127.0.0.1:3001/api/terms");
-    allTerms = await response.json();
+    if (!response.ok) throw new Error("Network response was not ok");
 
+    allTerms = await response.json();
     filteredTerms = allTerms;
     currentPage = 0;
-    displayTerms();
+    filterTermsByLetter("А-Г");
   } catch (error) {
     console.error("Помилка завантаження термінів:", error);
     const container = document.querySelector(".study-container");
-    container.innerHTML +=
-      '<p style="color: red; text-align: center;">Помилка завантаження термінів</p>';
+    const errorMsg = document.createElement("p");
+    errorMsg.style.cssText =
+      "color: red; text-align: center; margin-top: 20px;";
+    errorMsg.textContent =
+      "Не вдалося завантажити терміни. Перевірте з'єднання з сервером.";
+    container.appendChild(errorMsg);
   }
 }
 
-// Ініціалізація при завантаженні сторінки
 document.addEventListener("DOMContentLoaded", () => {
   loadTerms();
 
-  // Обробники для кнопок пагінації
-  document.querySelector(".previous").addEventListener("click", () => {
+  const prevBtn = document.querySelector(".previous");
+  const nextBtn = document.querySelector(".next");
+
+  prevBtn.addEventListener("click", () => {
     if (currentPage > 0) {
       currentPage--;
-      displayTerms();
-      window.scrollTo({
-        top: document.querySelector("#dictionary-section").offsetTop,
-        behavior: "smooth",
-      });
+      displayTerms(true);
     }
   });
 
-  document.querySelector(".next").addEventListener("click", () => {
+  nextBtn.addEventListener("click", () => {
     if ((currentPage + 1) * TERMS_PER_PAGE < filteredTerms.length) {
       currentPage++;
-      displayTerms();
-      window.scrollTo({
-        top: document.querySelector("#dictionary-section").offsetTop,
-        behavior: "smooth",
-      });
+      displayTerms(true);
     }
   });
 
-  // Обробники для кнопок алфавіту
   document.querySelectorAll(".alpha-btn").forEach((btn) => {
     btn.addEventListener("click", (e) => {
       document
@@ -175,10 +207,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const range = e.target.getAttribute("data-range");
       filterTermsByLetter(range);
-      window.scrollTo({
-        top: document.querySelector("#dictionary-section").offsetTop,
-        behavior: "smooth",
-      });
     });
   });
 });
