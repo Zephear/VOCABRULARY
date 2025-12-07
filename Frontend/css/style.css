@@ -122,7 +122,6 @@ body {
   
 }
 
-
 /* MAIN PAGE */
 .main-page-title {
   font-size: 3.3rem;
@@ -133,7 +132,6 @@ body {
   color: #ffe9fa;
   text-shadow: 0 2px 22px #2c234b88;
 }
-
 .page-section {
  display: none; 
  flex-direction: column;
@@ -145,13 +143,10 @@ body {
  opacity: 0; 
  transition: opacity 0.7s;
 }
-
 .page-section.active {
  display: flex; 
 }
-
 .page-section.active { opacity: 1; }
-
 .content {
   background: rgba(44,32,70,0.77);
   box-shadow: 0 8px 32px 0 rgba(46,21,63,0.25);
@@ -165,28 +160,29 @@ body {
   position: relative;
   transition: box-shadow 0.2s, border 0.2s;
 }
-
 .content:hover {
   box-shadow: 0 16px 58px 0 rgba(46,21,63,0.36);
   border: 1.5px solid #ff4577cc;
 }
-
-
-
+.logo-link {
+    text-decoration: none; 
+    color: inherit;      
+    display: flex;         
+    align-items: center;  
+    cursor: pointer;      
+}
 .section-text {
   color: #ebdefb;
   font-size: 1.2rem;
   line-height: 1.7;
   margin-bottom: 0.8rem;
 }
-
 /* DictionarySECTION */
 .dictionary-content {
   text-align:left;
   margin:0;
   padding:0;
 }
-
 .dictionary-intro-text{
   max-width: 1100px;
   margin: 0 auto 32px auto;
@@ -197,7 +193,6 @@ body {
   font-family: 'Montserrat', 'Arial', sans-serif;
   font-weight: 500;
 }
-
 .line_between {
     height: 0.1875rem;
     background: linear-gradient(90deg, #fff080, #ff4577 70%);
@@ -228,7 +223,6 @@ body {
   background: linear-gradient(90deg, #ff4577, #aa35ff 80%);
   transform: scale(1.12);
 }
-
 .study-container{
   background: linear-gradient(135deg, #221146 0%, #49309e 55%, #00132c 100%);
   box-shadow: 0 8px 32px 0 rgba(21, 9, 29, 0.25);
@@ -277,7 +271,6 @@ body {
   padding-right: 100px;
   letter-spacing: 1.3px;
 }
-
 .buttons-container {
   display: flex;
   justify-content: center;
@@ -286,7 +279,6 @@ body {
   width: 100%;
   gap: 8rem;
 }
-
 .previous, .next {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.15rem;
@@ -306,13 +298,11 @@ body {
   background: linear-gradient(90deg, #fff080, #ff4577 70%);
   color: #291951;
   transform: scale(1.03);
-
 }
 .previous:hover {
   background: linear-gradient(90deg, #fff080, #ff4577 70%);
   color: #291951;
   transform: scale(1.03);
-  
 }
 /* Dictionary adaptation */
 @media screen and (max-width: 1280px) {
@@ -397,13 +387,11 @@ body {
     justify-content: center;
     gap: 20px;
   }
-
   .previous,
   .next {
     font-size: 1rem;
     padding: 10px 28px;
   }
-
   .alpha-btn {
     padding: 3px 7px;
     font-size: 0.8rem;
@@ -411,8 +399,6 @@ body {
   }
 }
 /* Saved-terms */
-
-
 /* CTA BUTTON */
 .cta-btn {
   font-family: inherit;
@@ -439,7 +425,6 @@ body {
   text-align: center;
   margin-top: 60px;
 }
-
 /* Адаптивність */
 @media (max-width: 650px) {
   .main-page-title { font-size: 2rem; }
@@ -447,7 +432,6 @@ body {
   .site-name { font-size: 1.2rem; }
   .header { padding: 12px 3vw 6px 2vw;}
 }
-
 .footer {
   width: 100%;
   padding: 22px 0;
@@ -461,20 +445,16 @@ body {
   box-shadow: 0 -2px 24px 0 #29195144;
   margin-top: 36px;
 }
-
 .footer p {
   margin: 0;
   font-weight: 500;
   text-shadow: 0 2px 7px #12095069;
 }
-
-
 .footer-content {
   max-width: 1200px;
   margin: 0 auto;
   text-align: center;
 }
-
 .social-links {
   display: flex;
   gap: 20px;
@@ -482,7 +462,6 @@ body {
   margin-bottom: 25px;
   padding-top: 10px;
 }
-
 .social-links a {
   display: inline-flex;
   align-items: center;
@@ -493,51 +472,41 @@ body {
   text-decoration: none;
   transition: all 0.3s ease;
 }
-
 .social-links a:hover {
   transform: translateY(-3px);
 }
-
 .social-links a.facebook {
   background: rgba(24, 119, 242, 0.2);
   color: #1877f2;
 }
-
 .social-links a.facebook:hover {
   background: #1877f2;
   color: #fff;
 }
-
 .social-links a.instagram {
   background: rgba(225, 48, 108, 0.2);
   color: #e1306c;
 }
-
 .social-links a.instagram:hover {
   background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
   color: #fff;
 }
-
 .social-links a.linkedin {
   background: rgba(0, 119, 181, 0.2);
   color: #0077b5;
 }
-
 .social-links a.linkedin:hover {
   background: #0077b5;
   color: #fff;
 }
-
 .social-links a.telegram {
   background: rgba(0, 136, 204, 0.2);
   color: #0088cc;
 }
-
 .social-links a.telegram:hover {
   background: #0088cc;
   color: #fff;
 }
-
 .footer-links {
   display: flex;
   gap: 20px;
@@ -545,25 +514,21 @@ body {
   justify-content: center;
   margin-bottom: 20px;
 }
-
 .footer-links a {
   color: #7c8aff;
   text-decoration: none;
   font-size: 14px;
   transition: color 0.3s ease;
 }
-
 .footer-links a:hover {
   color: #fff;
   text-decoration: underline;
 }
-
 .footer-bottom {
   padding-top: 20px;
   font-size: 14px;
   color: rgba(255, 255, 255, 0.7);
 }
-
 .footer-bottom p {
   margin: 0;
 }
@@ -577,17 +542,14 @@ body {
   .social-links {
     gap: 15px;
   }
-
   .social-links a {
     width: 40px;
     height: 40px;
   }
-
   .social-links svg {
     width: 20px;
     height: 20px;
   }
-
   .footer-links {
     flex-direction: column;
     gap: 10px;
